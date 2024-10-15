@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+# register with eureka server
+eureka:
+  client:
+    serviceUri:
+      defaultZone: http://localhost:8761/eureka
+
+
+spring:
+  application:
+    name: RatingService
+  #----------Database Configuration -------#
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/micro_Hotel_DB?zeroDateTimeBehavior=convertToNull
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
